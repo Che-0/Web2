@@ -5,6 +5,12 @@
 
 console.log("Hello World");
 
+//operadores logicos
+// && and
+// || or
+// ! not
+
+
 
 let uno = "Hola"
 
@@ -34,7 +40,3 @@ if (suma === "30" && resta === "64" && division === "0"){
     calificacion = 5;
     document.body.innerHTML = " <h1>!!!!  tu calificacion es 5  !!!!</h1> <center> <img src='https://i.pinimg.com/550x/ce/60/1e/ce601e5bad797cc2aa8be5134b434e34.jpg' alt='gato'>  </center> ";
 }
-
-
-
-//document.body.innerHTML = " <h1>!!!!  RACISTA  !!!!</h1> <center> <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/220px-Cat_November_2010-1a.jpg' alt='gato'>  </center> ";
