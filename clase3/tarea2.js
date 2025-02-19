@@ -35,6 +35,8 @@ compararNumeros(numero1, numero2);
 
 
 
+// Peliculas para elegir
+
 let opciones = prompt(`Elija una pelicula:
     1.- El señor de los anillos
     2.- Harry Potter
@@ -72,29 +74,3 @@ while (contador2 < 10) {
     console.log("1*"+contador2+ "=>" +   1*contador2);
     contador2++;
 }
-
-
-
-//Adivina el numero
-// Tener un numero de vidad 3
-
-let life = 3;
-let numeroAdivinar = Math.floor(Math.random() * (10-1));
-console.log(numeroAdivinar);
-
-while (life > 0) {
-    let numero = parseInt(prompt("Adivina el numero entre 1 y 10"));
-    if (numero === numeroAdivinar) {
-        alert("Felicidades adivinaste el numero");
-        break;
-    } else {
-        life--;
-        alert("Te quedan " + life + " vidas");
-    }
-    if (life === 0) {
-        alert("Se te acabaron las vidas");
-    }
-}
-
-
-
