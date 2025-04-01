@@ -1,36 +1,44 @@
+// guardar inventario en un array
 let inventario = [];
 
-/// funcion para menu 
-
-
+/// funcion para desplegar menu 
 function menu() {
     let opcion = prompt(`
-
         Elige una opción:
         1. Agregar producto
         2. Mostrar inventario
         3. Buscar producto
         4. Salir`);
-
     return opcion;    
 }
 
+// funcion buscar producto
+function buscarProducto() {
+    let nombre = prompt("Ingrese el nombre del producto a buscar:");
+    let encontrado = inventario.find(producto => producto.nombre.toLowerCase() === nombre.toLowerCase());
 
-// funcion mostrar inventario log
+    if (encontrado) {// si no es undefined
+        alert("Producto encontrado: " + encontrado.nombre + "\nPrecio: $" + encontrado.precio + "\nCantidad: " + encontrado.cantidad);
+    } else {
+        alert("Producto no encontrado");
+    }
+}
 
+// funcion mostrar inventario
 function mostrarInventario() {
+    // pa que se vea en la consola
     for (let i = 0; i < inventario.length; i++) {
         console.log("Producto " + (i + 1) + ": " + JSON.stringify(inventario[i]));
     }
+    // que haya al menos un producto
     if (inventario.length === 0) {
         alert("No hay productos en el inventario");
     } else {
-        let pivote = "";
-        //let listaFormateada = inventario.map((producto, index) => {pivote+""+producto.nombre + " - " + producto.precio + " - " + producto.cantidad + "\n"});
         let listaFormateada = inventario.reduce((acumulador, producto) => {
             return acumulador + "producto: "+producto.nombre + "  -Precio: $" + producto.precio + "  -stok: " + producto.cantidad + "\n";
         }
         , "");
+        
         alert("El inventario es: "+ "\n" + listaFormateada);
         console.log("El inventario es: "+"\n" + listaFormateada);
     }
@@ -58,10 +66,7 @@ function agregarProducto() {
 }
 
 
-
-
 // funcion inicializar
-
 function inicializar() {
     console.log("Bienvenido al sistema de inventario");
     let continuar = true;
@@ -88,3 +93,63 @@ function inicializar() {
 }
 
 inicializar();
+
+
+// ..                                                                                          
+// ..                 ...                                                                      
+// ..              .::::...:.                                                                  
+// ..           ..::.      .::..                                                               
+// ..           .-.          .:.                                 ....                          
+// ..           --            .-                              .--::---.                        
+// ..          .-.            .-:                           .-:.     .-.                       
+// ..          .:              .=.                         .:.        .-.                      
+//             -:               -:                       .-=.         .=-.                     
+//             -:               :-.                    ..=:           .-:.                     
+//            .-:               .=.                    .=-            .--.                     
+//             .:               .=.                   .-=.            .=:.                     
+//             --               .=:                  .-+:.            .=:                      
+//             .-.              .=:                  .--.             .-.                      
+//              -.              .=-                 .:-.             .:-.                      
+//              ::              .=:                 :+:              .-:                       
+//              .:.             .-:                 --.              .-.                       
+//              .-.             .::                .=.               --.                       
+//              ...             .-:               .--               :=:                        
+//              .::             .-:               :=.              .=-                         
+//               .-.            .=:               :-.             .==           ..             
+//               .:.            :=:              .--.            .-=.           ..             
+//               .:-.           :+=-======--===:--=:.           .-+:.           ..             
+//                .:-           .........   .......:.           -+:.            ..             
+//                  ..                                      .-:--..             ..             
+//                   .:==:.                                   -+-..                            
+//                ..:=-.                                        -=:.                           
+//              .:=-.                                           ..--.                          
+//              :=:.                                               :=:                         
+//             -*:            :-:.                                  :+:                        
+//            .+-             :+-.                   ..-=.           ==.                       
+//           .-=              -##*=..              ...=+:.           :+:                       
+//           .=:            .-*%#%#+:             :+*#%*-.           .:-.                      
+//           :-.            .-**#@#+:             -*%%##-.            :=.                      
+//          .::.             ..-=::..             .-*#+-.             :=:                      
+//          .::.                                                      :+:                      
+//           ...                                                     .:=.                      
+//           .:.                        .-===:..                     .--.                      
+//           .:.                        :+***=..                     :=:                       
+//           .::                     :.    .:.   ...                 =-.                       
+//           ..-                     ::    :=:   :-.                :*:                        
+//            .-+.                   .::::-:.:-:=-.                :*-                         
+//              :=:.                    ..                         -=.                         
+//               .-=-.                                           .==.                          
+//                 .-*+:.                                       -+=.                           
+//                   ..-+-.                                 .:+=...                            
+//                     ..=**-                             .=+-.                                
+//                    .:-::..-+=:....            ....:=+==:-=.                                 
+//                    .:+-......:-++-----::::-----=--:.   .--.                                 
+//                    .:=::.....:.:::::::..:....          .--.                                 
+//                    .-=-:::-::.....                     .==.                                 
+//                    .-=:::...                           .==.                                 
+//                    .--.                          .....::=-                                  
+//                    .=-::               .   ....:=+=+*#+=+-                                  
+//                     .:-===----=+===++=+++==++++==--:...                                     
+//                           ................                                                  
+                                                                                            
+                                                                            
