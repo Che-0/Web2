@@ -11,23 +11,8 @@ function menu() {
         2. Mostrar inventario
         3. Buscar producto
         4. Salir`);
-    switch (opcion) {
-        case '1':
-            agregarProducto();
-            break;
-        case '2':
-            mostrarInventario();
-            break;
-        case '3':
-            buscarProducto();
-            break;
-        case '4':
-            alert("Saliendo...");
-            break;
-        default:
-            alert("Opción no válida");
-            //menu();
-    }
+
+    return opcion;    
 }
 
 
@@ -40,7 +25,14 @@ function mostrarInventario() {
     if (inventario.length === 0) {
         alert("No hay productos en el inventario");
     } else {
-        alert("Productos en el inventario: " + inventario);
+        let pivote = "";
+        //let listaFormateada = inventario.map((producto, index) => {pivote+""+producto.nombre + " - " + producto.precio + " - " + producto.cantidad + "\n"});
+        let listaFormateada = inventario.reduce((acumulador, producto) => {
+            return acumulador + "producto: "+producto.nombre + "  -Precio: $" + producto.precio + "  -stok: " + producto.cantidad + "\n";
+        }
+        , "");
+        alert("El inventario es: "+ "\n" + listaFormateada);
+        console.log("El inventario es: "+"\n" + listaFormateada);
     }
 }
 
@@ -52,9 +44,7 @@ function agregarProducto() {
 
     if(precio <= 0 || cantidad <= 0) {
         alert("El precio y la cantidad deben ser mayores a 0");
-
     }else{
-
         let producto = {
             nombre: nombre,
             precio: precio,
