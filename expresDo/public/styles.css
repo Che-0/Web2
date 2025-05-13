@@ -1,0 +1,32 @@
+body{
+    background-color: #1481a1;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1{
+    color: #160101;
+    text-align: center;
+    font: 7em sans-serif;
+}
+a{
+    color: #d8a0a0;
+    text-decoration: none;
+    font-size: 10px;
+    margin-top: 10px;
+}
+
+form{
+    width: 300px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+button{
+    background-color: #d8a0a0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
